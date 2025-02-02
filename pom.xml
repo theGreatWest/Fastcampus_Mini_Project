@@ -44,13 +44,13 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.32</version> <!-- 버전은 최신으로 변경 -->
+            <version>2.0.16</version>
         </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.6</version> <!-- 버전은 최신으로 변경 -->
+            <version>1.5.16</version>
         </dependency>
 
     </dependencies>
