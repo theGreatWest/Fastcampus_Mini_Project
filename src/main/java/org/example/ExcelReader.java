@@ -7,10 +7,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class Excel {
+public class ExcelReader {
     public static void main(String[] args) {
         try {
-            FileInputStream file = new FileInputStream(new File("src/main/resources/exel/example.xlsx"));
+            FileInputStream file = new FileInputStream(new File("src/main/resources/excel/example.xlsx"));
             Workbook workbook = WorkbookFactory.create(file);
             // 가상 메모리에 있는 격자모양 저장공간
             Sheet sheet = workbook.getSheetAt(0);
@@ -19,9 +19,9 @@ public class Excel {
                 if (row.getPhysicalNumberOfCells() == 0) continue;
 
                 for (Cell cell : row) {
-                    Object cellValue = FindOriginDataFormat.start(cell);
+                    Object cellValue = FindOriginDataFormat.findOriginData(cell);
                     // util 패키지로 이동
-                    if (cellValue != null) System.out.print(cellValue + "\t");
+                    if (cellValue != null) System.out.print(FindOriginDataFormat.findOriginData(cell) + "\t");
                 }
                 System.out.println();
             }
